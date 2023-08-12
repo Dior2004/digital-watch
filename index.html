@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Clock</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Kdam Thmor Pro";
+      }
+
+      :root {
+        --main-font: #222;
+        --background: #fff;
+        --wrap-background: rgba(238, 238, 238, 0.676);
+      }
+
+      body {
+        width: 100%;
+        min-width: 620px;
+        height: 100vh;
+        background-color: var(--wrap-background);
+        display: grid;
+        place-items: center;
+      }
+
+      .container {
+        height: 160px;
+        background-color: var(--background);
+        color: var(--main-font);
+        box-shadow: 0 2px 10px #2c2c2c22;
+        border-radius: 25px;
+        padding: 0 20px 0 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.3s;
+      }
+
+      span {
+        width: 140px;
+        font-size: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        transition: 0.3s;
+      }
+
+      span > div {
+        width: 50%;
+        text-align: end;
+      }
+
+      .dots {
+        width: 30px;
+      }
+
+      .tools {
+        width: 65px;
+        height: 100%;
+        font-size: 40px;
+        display: flex;
+        flex-direction: column;
+        padding-top: 23px;
+        padding-left: 5px;
+      }
+      #mode {
+        width: 35px;
+        height: 35px;
+        box-shadow: 0 2px 10px #2c2c2c22;
+        margin-left: 12px;
+        border-radius: 50%;
+        position: relative;
+        display: grid;
+        transition: 0.3s;
+        place-items: center;
+      }
+
+      #mode:hover {
+        transition: 0.3s;
+        box-shadow: 0 2px 10px #2c2c2c40;
+        cursor: pointer;
+      }
+
+      #periodDisplay {
+        transition: 0.3s;
+      }
+
+      i {
+        font-size: 25px;
+      }
+
+      #sun {
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <span>
+        <div id="firsthour"></div>
+        <div id="secondhour"></div>
+      </span>
+      <span class="dots">:</span>
+      <span>
+        <div id="firstmin"></div>
+        <div id="secondmin"></div>
+      </span>
+      <span class="dots">:</span>
+      <span>
+        <div id="firstsec"></div>
+        <div id="secondsec"></div>
+      </span>
+      <div class="tools">
+        <p id="periodDisplay"></p>
+        <div id="mode">
+          <i style="position: absolute" id="moon" class="fas fa-moon"></i>
+          <i style="position: absolute" id="sun" class="fas fa-sun"></i>
+        </div>
+      </div>
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>
